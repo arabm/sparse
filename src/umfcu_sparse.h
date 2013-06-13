@@ -5,7 +5,7 @@
  *    csparce.h
  */
 
-#include "umfcu_define.h"
+
 
 
 typedef struct cs_sparse /* matrix in compressed-column or triplet form */
@@ -19,6 +19,8 @@ double *x ; /* numerical values, size nzmax */
 int nz ; /* # of entries in triplet matrix, -1 for compressed-col */
 } cs;
 
+
+int cs_entry (cs *T, int i, int j, double x);
 
 int cs_gaxpy (const cs *A, const double *x, double *y);
 

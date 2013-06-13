@@ -18,7 +18,10 @@ cs *cs_spalloc(int m, int n, int nzmax, int values, int triplet);
 
 cs *cs_spfree(cs *A);
 
-cs *cs_sprealloc (cs *A, int nzmax);
+int cs_sprealloc (cs *A, int nzmax);
+
+
+cs *cs_done(cs *C, void *w, void *x, int ok);
 
 #include "umfcu_memory.c"
 

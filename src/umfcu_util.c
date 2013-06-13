@@ -41,3 +41,19 @@ void cs_display_vector(int *x, int n){
 	for ( i = 0 ; i <n ; i++)
 		printf("%d\n",x[i]);
 };
+
+
+
+double cs_cumsum( int *p, int *c, int n){
+	int i, nz = 0;
+	double nz2 = 0;
+	if ( !p || !c) return -1;
+	for (i = 0 ; i < n ;i ++){
+		p[i] = nz;
+		nz += c[i];
+		nz2 += c[i];
+		c[i] = p[i];
+	}
+	p[n] = nz;
+	return nz2;
+};

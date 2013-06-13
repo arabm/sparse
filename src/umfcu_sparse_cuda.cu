@@ -16,12 +16,7 @@ void cs_measuring_time_elapsed(clock_t *begin, clock_t *end,double *out){
 
 };
 
-int cs_create_cs_device(cs *dA){
 
-
-
-
-};
 
 int cs_gaxpy_cuda(const cs *A, const double *x, double *y){
 	int n = A->n,m = A->m, *Ai = A->i,*Ap = A->p, nzmax = A->nzmax;
@@ -59,7 +54,7 @@ int cs_gaxpy_cuda(const cs *A, const double *x, double *y){
 	cudaFree(dA.p);
 	cudaFree(dA.x);
 	cudaFree(&dA);
-//	cudaDeviceReset();
+	cudaDeviceReset();
     return 0;
 };
 
